@@ -1,11 +1,12 @@
-[{
-    "id": 1,
-    "title": "Eggplant Parmesan",
-    "Ingredient": "eggplant"
-},
-{
-    "id": 2,
-    "title": "Broccoli Chicken",
-    "Ingredient": "chicken"
-}
+[
+    {
+        "id": 1,
+        "title": "Eggplant Parmesan",
+        "ingredient": "eggplant"
+    },
+    {
+        "id": 2,
+        "title": "Broccoli Chicken",
+        "ingredient": "chicken"
+    }
 ]
