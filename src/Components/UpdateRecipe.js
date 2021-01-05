@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import DeleteRecipe from './DeleteRecipe'
 
 
 class UpdateRecipe extends Component {
@@ -30,7 +31,7 @@ class UpdateRecipe extends Component {
     //put - 2 params: endpoint & body
 
     updateRecipe = () => {
-        axios.put(`/api/recipes/${this.props.book.id}`, { title: this.state.title, ingredient: this.state.ingredient })
+        axios.put(`/api/recipe/${this.props.recipe.id}`, { title: this.state.title, ingredient: this.state.ingredient })
             .then(() => {
                 this.props.getRecipeFn();
                 this.setState({
@@ -43,12 +44,8 @@ class UpdateRecipe extends Component {
     }
 
 
-    handleEdit = () => {
-
-    }
-
     render() {
-        //destructuring makes using state and props values easier
+
         const { title, ingredient, isEditing } = this.state;
         const { recipe } = this.props;
 
@@ -57,8 +54,8 @@ class UpdateRecipe extends Component {
                 {isEditing
                     ? (
                         <section>
-                            <input value={title} name='title' onChange={e => this.handleInputs(e)} />
-                            <input value={ingredient} name='ingredient' onChange={e => this.handleInputs(e)} />
+                            <input value={title} name='title' onChange={e => this.handleInput(e)} />
+                            <input value={ingredient} name='ingredient' onChange={e => this.handleInput(e)} />
                             <button onClick={this.updateRecipe}>Submit</button>
                         </section>
                     )
@@ -67,9 +64,11 @@ class UpdateRecipe extends Component {
                             <h3>{recipe.title}</h3>
                             <h4>{recipe.ingredient}</h4>
                             <button onClick={this.handleToggle}>Edit</button>
-                            <button>Delete</button>
+                            <DeleteRecipe recipe={this.props.recipe} getRecipeFn={this.props.getRecipeFn} />
+                            {/* <button>Delete</button> */}
                         </section>
                     )}
+
             </section>
 
         )
@@ -77,4 +76,4 @@ class UpdateRecipe extends Component {
 }
 
 
-export default UpdateRecipe
+export default UpdateRecipe;

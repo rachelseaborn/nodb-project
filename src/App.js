@@ -20,11 +20,11 @@ class App extends Component {
 
   }
 
-  //Use e.target.name property to work with all inputs - use name with all elements & set this.state for that specific el.
+  //Use e.target.name property to work with all inputs - use name with all //elements & set this.state for that specific el.
 
-  handleInputs = (e) => {
+  handleInputs = (el) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [el.target.name]: el.target.value
     })
   }
 
@@ -34,7 +34,7 @@ class App extends Component {
     axios.get('/api/recipes')
       .then(res => {
         this.setState({ recipes: res.data })
-        //console.log(res)
+
       })
       .catch(err => console.log(err));
   }
@@ -56,26 +56,31 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Header />
 
-        <input value={this.state.title} name='title' placeholder='Title' onChange={e => this.handleInputs(e)} />
-        <input value={this.state.ingredient} name='ingredient' placeholder='ingredient' onChange={e => this.handleInputs(e)} />
+        <button onClick={this.getRecipes}>Recipe List</button>
+
+        <input value={this.state.title} name='title' placeholder='title' onChange={el => this.handleInputs(el)} />
+        <input value={this.state.ingredient} name='ingredient' placeholder='ingredient' onChange={el => this.handleInputs(el)} />
         <button onClick={this.addRecipe}>Add Recipe</button>
-        {/** 
+
         {
           this.state.recipes.map(recipe => (
-            <Recipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
+            <UpdateRecipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
           ))
         }
-
-        **/}
+        {/* {
+          
+          this.state.recipes.map(recipe => (
+            <DeleteRecipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
+          ))
+        } */}
 
       </div >
 
     );
   }
 }
-
-
 
 export default App;

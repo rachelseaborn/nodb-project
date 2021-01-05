@@ -53,7 +53,7 @@ module.exports = {
             title: req.body.title || editRecipe.title,
             ingredient: req.body.ingredient || editRecipe.ingredient
         }
-        console.log(editBook)
+        console.log(editRecipe)
 
         res.sendStatus(200);
     },
