@@ -1,6 +1,6 @@
 
 const data = require('../src/data')
-let id = 1;
+let id = 3;
 
 /* alt to data.json
 const recipes = [];
@@ -38,9 +38,7 @@ module.exports = {
             ingredient: ingredient
         }
 
-
         data.push(newRecipe);
-        //console.log('data')
         id++;
         res.status(200).send(data);
     },
@@ -55,6 +53,8 @@ module.exports = {
             title: req.body.title || editRecipe.title,
             ingredient: req.body.ingredient || editRecipe.ingredient
         }
+        console.log(editBook)
+
         res.sendStatus(200);
     },
 

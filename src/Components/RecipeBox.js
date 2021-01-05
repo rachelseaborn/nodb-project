@@ -11,7 +11,11 @@ class RecipeBox extends Component {
 
 
     render() {
-
+        return (
+            <div>
+                <p>Hi</p>
+            </div>
+        )
 
     }
 }
