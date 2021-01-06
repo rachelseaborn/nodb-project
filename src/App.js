@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Components/Header';
-import DeleteRecipe from './Components/DeleteRecipe';
+// import DeleteRecipe from './Components/DeleteRecipe';
 import UpdateRecipe from './Components/UpdateRecipe';
-//import UserInputFoods from './Components/UserInputFoods';
 
 import './App.css';
 
@@ -42,9 +41,9 @@ class App extends Component {
   //Uncomment to display all recipes upon launch. Else "recipe list" 
   //button displays all recipes when clicked.
 
-  // componentDidMount() {
-  //   this.getRecipes();
-  // }
+  componentDidMount() {
+    this.getRecipes();
+  }
 
   //post 2 args: endpoint & body - obj for ctrl ()
 
@@ -62,10 +61,11 @@ class App extends Component {
 
         <Header />
 
+
         <button onClick={this.getRecipes}>Recipe List</button>
 
-        <input value={this.state.title} name='title' placeholder='title' onChange={el => this.handleInputs(el)} />
-        <input value={this.state.ingredient} name='ingredient' placeholder='ingredient' onChange={el => this.handleInputs(el)} />
+        <input value={this.state.title} name='title' placeholder='Title' onChange={el => this.handleInputs(el)} />
+        <input value={this.state.ingredient} name='ingredient' placeholder='Main ingredient' onChange={el => this.handleInputs(el)} />
         <button onClick={this.addRecipe}>Add Recipe</button>
 
         {

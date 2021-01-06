@@ -1,0 +1,27 @@
+
+
+header {
+    width: 100vw;
+    height: 75px;
+    /*background: none; */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 2; 
+}
+
+section {
+    height: 150px;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* align-items: center; */
+    position: fixed; 
+    margin-top: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}

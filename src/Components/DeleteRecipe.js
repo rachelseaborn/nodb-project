@@ -17,6 +17,18 @@ class DeleteRecipe extends Component {
             .catch(err => console.log(err));
     }
 
+    // deleteRecipe = () => {
+    //     axios.delete(`/api/recipe/${this.props.recipe.id}`, { title: this.state.title, ingredient: this.state.ingredient })
+    //         .then(() => {
+    //             this.props.getRecipeFn();
+    //             this.setState({
+    //                 title: "Deleted"
+    //             })
+    //         })
+
+    //         .catch(err => console.log(err));
+    // }
+
 
     render() {
 
@@ -24,8 +36,8 @@ class DeleteRecipe extends Component {
         const { recipe } = this.props;
 
         return (
-            <button onClick={() => this.deleteRecipe(this.props.recipe.id)}>Delete</button>
-
+            <button onClick={() => this.deleteRecipe(this.props.recipe.id)
+            } > Delete</button >
         )
     }
 }

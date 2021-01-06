@@ -4,8 +4,8 @@ import React from 'react';
 const Header = () => {
     return (
         <header>
-            <h1>Breaking SAD</h1>
-            <h2>Healthy recipes YOUR way to kick the Standard American Diet (SAD)</h2>
+            <h1>Mostly Healthy Recipes</h1>
+            <h2>Eat by the 80/20 rule</h2>
         </header>
     )
 }
