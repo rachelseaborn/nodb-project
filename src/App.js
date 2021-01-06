@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Components/Header';
-// import DeleteRecipe from './Components/DeleteRecipe';
 import UpdateRecipe from './Components/UpdateRecipe';
 
 import './App.css';
@@ -50,7 +49,11 @@ class App extends Component {
   addRecipe = () => {
     axios.post('/api/recipe', { title: this.state.title, ingredient: this.state.ingredient })
       .then(res => {
-        this.setState({ recipes: res.data })
+        this.setState({
+          recipes: res.data,
+          title: '',
+          ingredient: ''
+        })
       })
       .catch(err => console.log(err));
   }
