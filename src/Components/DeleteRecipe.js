@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
+//THIS SHOULD BE A FUNCTIONAL COMPONENT BECAUSE NOT CHANGING
+//STATE
 
 class DeleteRecipe extends Component {
     constructor(props) {
@@ -17,17 +19,6 @@ class DeleteRecipe extends Component {
             .catch(err => console.log(err));
     }
 
-    // deleteRecipe = () => {
-    //     axios.delete(`/api/recipe/${this.props.recipe.id}`, { title: this.state.title, ingredient: this.state.ingredient })
-    //         .then(() => {
-    //             this.props.getRecipeFn();
-    //             this.setState({
-    //                 title: "Deleted"
-    //             })
-    //         })
-
-    //         .catch(err => console.log(err));
-    // }
 
 
     render() {

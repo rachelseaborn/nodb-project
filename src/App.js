@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   //Uncomment to display all recipes upon launch. Else "recipe list" 
-  //button displays all recipes when clicked.
+  //button displays all recipes when clicked.  
 
   componentDidMount() {
     this.getRecipes();
@@ -64,10 +64,10 @@ class App extends Component {
 
         <Header />
 
+        {/* Buggy (needs to refresh) so removed for now. Move to separate component & add filtering */}
+        {/* <button onClick={this.getRecipes}>Recipe List</button> */}
 
-        <button onClick={this.getRecipes}>Recipe List</button>
-
-        <input value={this.state.title} name='title' placeholder='Title' onChange={el => this.handleInputs(el)} />
+        <input value={this.state.title} name='title' placeholder='Name' onChange={el => this.handleInputs(el)} />
         <input value={this.state.ingredient} name='ingredient' placeholder='Main ingredient' onChange={el => this.handleInputs(el)} />
         <button onClick={this.addRecipe}>Add Recipe</button>
 
@@ -76,7 +76,8 @@ class App extends Component {
             <UpdateRecipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
           ))
         }
-        {console.log(this.state.ingredient)}
+        {/* {console.log(this.state.ingredient)} */}
+
       </div >
 
     );

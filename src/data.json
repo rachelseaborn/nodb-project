@@ -8,5 +8,10 @@
         "id": 2,
         "title": "Broccoli Chicken",
         "ingredient": "chicken"
+    },
+    {
+        "id": 3,
+        "title": "Pad Thai",
+        "ingredient": "steamed tofu"
     }
 ]

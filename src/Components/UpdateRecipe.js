@@ -59,17 +59,19 @@ class UpdateRecipe extends Component {
                                 <input value={ingredient} name='ingredient' onChange={e => this.handleInput(e)} />
                                 <button onClick={this.updateRecipe}
                                 >Submit</button>
-                                { console.log(this.state.title)}
-                                { console.log(this.state.ingredient)}
+                                {/* { console.log(this.state.title)}
+                                { console.log(this.state.ingredient)} */}
                             </section >
                         )
                         : (
                             <section>
-                                <h3>{recipe.title}</h3>
-                                <h4>{recipe.ingredient}</h4>
+                                <h3>Name: {recipe.title}</h3>
+                                <h4>Main ingredient: {recipe.ingredient}</h4>
                                 <button onClick={this.handleToggle}>Edit</button>
-                                { console.log(this.state.title)}
-                                { console.log(this.state.ingredient)}
+
+                                {/* { console.log(this.state.title)}
+                                { console.log(this.state.ingredient)} */}
+
                                 <DeleteRecipe recipe={this.props.recipe} getRecipeFn={this.props.getRecipeFn} />
                             </section>
                         )
