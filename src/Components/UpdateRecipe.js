@@ -36,38 +36,44 @@ class UpdateRecipe extends Component {
                 this.props.getRecipeFn();
                 this.setState({
                     title: '',
-                    author: '',
+                    ingredient: '',
                     isEditing: false
                 })
             })
             .catch(err => console.log(err));
     }
 
-
     render() {
 
         const { title, ingredient, isEditing } = this.state;
         const { recipe } = this.props;
+        //console.log(this.props)
 
         return (
             <section>
-                {isEditing
-                    ? (
-                        <section>
-                            <input value={title} name='title' onChange={e => this.handleInput(e)} />
-                            <input value={ingredient} name='ingredient' onChange={e => this.handleInput(e)} />
-                            <button onClick={this.updateRecipe}>Submit</button>
-                        </section>
-                    )
-                    : (
-                        <section>
-                            <h3>{recipe.title}</h3>
-                            <h4>{recipe.ingredient}</h4>
-                            <button onClick={this.handleToggle}>Edit</button>
-                            <DeleteRecipe recipe={this.props.recipe} getRecipeFn={this.props.getRecipeFn} />
-                            {/* <button>Delete</button> */}
-                        </section>
-                    )}
+                {
+                    isEditing
+                        ? (
+                            <section>
+                                <input value={title} name='title' onChange={e => this.handleInput(e)} />
+                                <input value={ingredient} name='ingredient' onChange={e => this.handleInput(e)} />
+                                <button onClick={this.updateRecipe}
+                                >Submit</button>
+                                { console.log(this.state.title)}
+                                { console.log(this.state.ingredient)}
+                            </section >
+                        )
+                        : (
+                            <section>
+                                <h3>{recipe.title}</h3>
+                                <h4>{recipe.ingredient}</h4>
+                                <button onClick={this.handleToggle}>Edit</button>
+                                { console.log(this.state.title)}
+                                { console.log(this.state.ingredient)}
+                                <DeleteRecipe recipe={this.props.recipe} getRecipeFn={this.props.getRecipeFn} />
+                            </section>
+                        )
+                }
 
             </section>
 

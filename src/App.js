@@ -39,9 +39,12 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  componentDidMount() {
-    this.getRecipes();
-  }
+  //Uncomment to display all recipes upon launch. Else "recipe list" 
+  //button displays all recipes when clicked.
+
+  // componentDidMount() {
+  //   this.getRecipes();
+  // }
 
   //post 2 args: endpoint & body - obj for ctrl ()
 
@@ -70,13 +73,7 @@ class App extends Component {
             <UpdateRecipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
           ))
         }
-        {/* {
-          
-          this.state.recipes.map(recipe => (
-            <DeleteRecipe key={recipe.id} recipe={recipe} getRecipeFn={this.getRecipes} />
-          ))
-        } */}
-
+        {console.log(this.state.ingredient)}
       </div >
 
     );

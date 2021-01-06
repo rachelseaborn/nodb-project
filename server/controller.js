@@ -47,13 +47,14 @@ module.exports = {
 
     updateRecipeName: (req, res) => {
         const { id } = req.params;
-        let editRecipe = data.find(el => el.id === +id);
-        editRecipe = {
+        let index = data.findIndex(el => el.id === +id);
+        const editRecipe = data[index];
+        data[index] = {
             id: editRecipe.id,
             title: req.body.title || editRecipe.title,
             ingredient: req.body.ingredient || editRecipe.ingredient
         }
-        console.log(editRecipe)
+        // console.log(editRecipe)
 
         res.sendStatus(200);
     },
